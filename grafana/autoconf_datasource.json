@@ -1,0 +1,15 @@
+{
+    "access": "proxy",
+    "basicAuth": false,
+    "database": "",
+    "id": 1,
+    "isDefault": true,
+    "jsonData": {},
+    "name": "Prometheus",
+    "orgId": 1,
+    "password": "",
+    "type": "prometheus",
+    "typeLogoUrl": "public/app/plugins/datasource/prometheus/img/prometheus_logo.svg",
+    "url": "http://prometheus:9090",
+    "user": ""
+}
