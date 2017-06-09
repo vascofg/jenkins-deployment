@@ -110,8 +110,8 @@ services:
     container_name: jenkins
     volumes:
       - jenkins_data:/var/jenkins_home
-    environment:
-      - JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+    #environment:
+    #  - JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
     ports:
       - 80:8080
       - 50000:50000
