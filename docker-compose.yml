@@ -3,6 +3,8 @@ version: '2'
 networks:
   monitor-net:
     driver: bridge
+  logging-net:
+    driver: bridge
 
 volumes:
     prometheus_data: {}
@@ -103,15 +105,17 @@ services:
       - 9200:9200
       - 5044:5044
     networks:
-      - monitor-net
+      - logging-net
 
   jenkins:
-    image: jenkins:alpine
+    build:
+      context: jenkins/
+    #image: vascofg/jenkins
     container_name: jenkins
     volumes:
       - jenkins_data:/var/jenkins_home
-    #environment:
-    #  - JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
     ports:
       - 80:8080
       - 50000:50000
+    networks:
+      - logging-net
