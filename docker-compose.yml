@@ -85,7 +85,7 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
     env_file:
-      - user.config
+      - grafana/user.config
     restart: unless-stopped
     expose:
       - 3000
@@ -96,21 +96,29 @@ services:
     labels:
       org.label-schema.group: "monitoring"
 
-  elk:
-    image: sebp/elk
-    container_name: elk
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.1
+    container_name: elasticsearch
     restart: unless-stopped
     ports:
-      - 5601:5601
       - 9200:9200
-      - 5044:5044
+    networks:
+      - logging-net
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:5.4.1
+    container_name: kibana
+    restart: unless-stopped
+    env_file:
+      - elastic/kibana.config
+    ports:
+      - 5601:5601
     networks:
       - logging-net
 
   jenkins:
     build:
       context: jenkins/
-    #image: vascofg/jenkins
     container_name: jenkins
     volumes:
       - jenkins_data:/var/jenkins_home

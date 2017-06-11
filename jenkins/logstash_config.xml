@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <jenkins.plugins.logstash.LogstashInstallation_-Descriptor plugin="logstash@1.2.0">
   <type>ELASTICSEARCH</type>
-  <host>http://elk</host>
+  <host>http://elasticsearch</host>
   <port>9200</port>
-  <username></username>
-  <password></password>
+  <username>elastic</username>
+  <password>feedzai</password>
   <key>logstash-jenkins/jenkins</key>
 </jenkins.plugins.logstash.LogstashInstallation_-Descriptor>
