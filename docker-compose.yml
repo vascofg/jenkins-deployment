@@ -10,6 +10,7 @@ volumes:
     prometheus_data: {}
     grafana_data: {}
     jenkins_data: {}
+    elastic_data: {}
 
 services:
 
@@ -99,6 +100,8 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:5.4.1
     container_name: elasticsearch
+    volumes:
+      - elastic_data:/usr/share/elasticsearch/data
     restart: unless-stopped
     ports:
       - 9200:9200
