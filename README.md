@@ -4,6 +4,11 @@
   - Grafana: http://localhost:3000 (user: grafana / pw: feedzai)
   - Kibana: http://localhost:5601/app/kibana (user: elastic / pw: feedzai)
 
+### Pre-requesites
+
+  - Docker
+  - docker-compose
+
 ### Running the scenario
 ```
 ./start.sh
