@@ -9,3 +9,15 @@
 ./start.sh
 ```
 Initial jenkins password will be echoed on console.
+
+### Stopping
+```
+./stop.sh
+```
+Containers will be removed but data volumes will be kept
+
+### Cleanup
+```
+./purge.sh
+```
+Containers and data volumes will be removed
