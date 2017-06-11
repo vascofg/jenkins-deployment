@@ -27,8 +27,8 @@ services:
     restart: unless-stopped
     expose:
       - 9090
-    ports:
-      - 9090:9090
+    #ports:
+    #  - 9090:9090
     networks:
       - monitor-net
     labels:
@@ -45,8 +45,8 @@ services:
     restart: unless-stopped
     expose:
       - 9093
-    ports:
-      - 9093:9093
+    #ports:
+    #  - 9093:9093
     networks:
       - monitor-net
     labels:
@@ -120,6 +120,7 @@ services:
     build:
       context: jenkins/
     container_name: jenkins
+    restart: unless-stopped
     volumes:
       - jenkins_data:/var/jenkins_home
     ports:
